@@ -10,9 +10,10 @@ function creteGame(player1, hour, player2) {
 let delay= -0.4;
 function createCard(date, day, games) {
   deley = delay + 0.4;
+  
   return `
   
-    <div class="card" style="animation-dalay:${delay}s">
+    <div class="card" style="animation-delay:${delay}s">
      <h2> ${date} <span>${day}</span></h2>
         <ul>
         ${games}            

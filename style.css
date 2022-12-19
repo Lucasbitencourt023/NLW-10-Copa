@@ -1,25 +1,29 @@
-* {/*SELETOR QUE ORGANIZA TODO O CONTEUDO E RETIRA TODO PREENCHIMENTO */
+* {
+  /*SELETOR QUE ORGANIZA TODO O CONTEUDO E RETIRA TODO PREENCHIMENTO */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
-  --card-title-border-color: #746615; 
-  --card-color-primary: #f7dd43; 
-  --card-bg-color:#1d1c19; 
+  --card-title-border-color: #746615;
+  --card-color-primary: #f7dd43;
+  --card-bg-color: #1d1c19;
   --bg: url(./assets/bg.yellow.svg);
 }
+
 body.blue {
   --card-title-border-color: #338AF3;
   --card-color-primary: #338AF3;
-  --card-bg-color:#202024;
+  --card-bg-color: #202024;
   --bg: url(./assets/bg.blue.svg);
 }
-body.green { 
---card-title-border-color: #047C3F;
---card-color-primary: #047C3F;
---card-bg-color: #1A1F1B;
---bg: url(./assets/bg.green.svg);
+
+body.green {
+  --card-title-border-color: #047C3F;
+  --card-color-primary: #047C3F;
+  --card-bg-color: #1A1F1B;
+  --bg: url(./assets/bg.green.svg);
 }
 
 ul {
@@ -32,24 +36,28 @@ body {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  
-  
+
+
 }
 
-body * {/*  SIMBOLO (*)MUDA TUDO QUE TEM DENTO DO BODY*/
- font-family: 'Roboto', sans-serif;
+body * {
+  /*  SIMBOLO (*)MUDA TUDO QUE TEM DENTO DO BODY*/
+  font-family: 'Roboto', sans-serif;
 }
 
 #app {
- width: fit-content; /*TAG SIG.:A BORDA SE ENCAIXA DENTRO DO CONTEUDO*/
- margin: auto; /*TAG SIG.: A CAIXA ESTA A 52PX - TAG AUTO SIG.: QUE ESTA CENTRALIZADO AUTOMATICO*/
- padding: 52px;
+  width: fit-content;
+  /*TAG SIG.:A BORDA SE ENCAIXA DENTRO DO CONTEUDO*/
+  margin: auto;
+  /*TAG SIG.: A CAIXA ESTA A 52PX - TAG AUTO SIG.: QUE ESTA CENTRALIZADO AUTOMATICO*/
+  padding: 52px;
 }
 
 
 header {
-  margin-bottom: 63px; /*TAG COLOCA UM ESPACO NO MEIO DA CAIXA*/
-  text-align:center ;
+  margin-bottom: 63px;
+  /*TAG COLOCA UM ESPACO NO MEIO DA CAIXA*/
+  text-align: center;
 }
 
 .card {
@@ -57,13 +65,16 @@ header {
   text-align: center;
 
   background: var(--card-bg-color);
-  border-bottom: 2px solid var(--card-color-primary); /*BORDA A BAIXO */
+  border-bottom: 2px solid var(--card-color-primary);
+  /*BORDA A BAIXO */
   border-radius: 6px;
 }
 
 #cards {
-  display: flex;/*COLOCA ELEMENTOS UM DO LADO DO OUTRO*/
-  flex-direction: column;/*COLOCA ELEMENTOS UM EM BAIXO DO OUTRO*/
+  display: flex;
+  /*COLOCA ELEMENTOS UM DO LADO DO OUTRO*/
+  flex-direction: column;
+  /*COLOCA ELEMENTOS UM EM BAIXO DO OUTRO*/
   gap: 32px;
 }
 
@@ -75,37 +86,43 @@ header {
 
   padding: 8px 16px;
   border: 1px solid var(--card-title-border-color);
-  border-radius: 6px; /*ARREDONDAMENTO DE BORDA */
+  border-radius: 6px;
+  /*ARREDONDAMENTO DE BORDA */
 
   width: fit-content;
   margin-inline: auto;
   margin-bottom: 53px;
 
-  color:#f7dd43;
+  color: #f7dd43;
 }
 
 .card h2 span {
   color: #e1e1e6;
   font-size: 14px;
-  text-transform: uppercase;/*TEG ONDE DEIXA TUDO DENTO DA CAIXA EM MAIUSCULO*/
+  text-transform: uppercase;
+  /*TEG ONDE DEIXA TUDO DENTO DA CAIXA EM MAIUSCULO*/
 }
 
 .card ul {
   display: flex;
   flex-direction: column;
-  gap: 24px; /*ESPACO ENTRE OS ELEMENTOS*/
+  gap: 24px;
+  /*ESPACO ENTRE OS ELEMENTOS*/
 
   width: 270px;
 }
 
 .card ul li {
-  display: flex;/*DESBLOQUEIA PROPRIEDADES */
-  align-items: center; /*ALINHAR ITENS AO CENTOR */
-  justify-content:space-between; /*ESPACO ENTRE ELEMENTOS*/
+  display: flex;
+  /*DESBLOQUEIA PROPRIEDADES */
+  align-items: center;
+  /*ALINHAR ITENS AO CENTOR */
+  justify-content: space-between;
+  /*ESPACO ENTRE ELEMENTOS*/
 }
 
 .card ul li+li {
-  padding-top:24px;
+  padding-top: 24px;
   border-top: 1px solid #323238;
 
 }
@@ -120,35 +137,38 @@ header {
 }
 
 .card h2:hover,
-.card ul li strong:hover,/*tag Hover usado para animar quando passar o mause em cima do objeto*/
+.card ul li strong:hover,
+/*tag Hover usado para animar quando passar o mause em cima do objeto*/
 .card ul li img:hover {
-  transform:scale(1.1);
+  transform: scale(1.1);
 }
 
 .card h2,
 .card ul li strong,
-.card ul li  img {
-  transition:transform 0.3s;
+.card ul li img {
+  transition: transform 0.3s;
 }
+
 .card {
   opacity: 0;
-  animation: appear 0.2s forwards; 
+  animation: appear 0.2s forwards;
 }
- 
+
 @keyframes appear {
-  0%{
-  transform: translateY(-50%);  
-  opacity:0; 
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
+
   100% {
-  opacity:1; 
+    opacity: 1;
   }
 }
 
-@media (min-width:700px){ 
-  #cards{
+@media (min-width:700px) {
+  #cards {
     max-width: 670px;
-    flex-direction:row;
+    flex-direction: row;
     flex-wrap: wrap;
   }
 }
